@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <style>
+            body {
+                width: 100%;
+                height: 100svh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: black;
+            }
+            .clock{
+                width: 200px;
+                height: 150px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: black;
+                /* color: white; */
+            }
+            .hours, .minitues, .second{
+                width: 40px;
+                height: auto;
+                border: 1px solid black;
+                background-color: white;
+                border-radius: 7px;
+                font-size: 32px;
+                text-align: center;
+                margin: 10px;
+            }
+            p{
+                color: white;
+                font-size: 28px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="clock">
+            <div class="hours"></div>
+            <p>:</p>
+            <div class="minitues"></div>
+            <p>:</p>
+            <div class="second"></div>
+       </div>
+       <script>
+        function clock(){
+            var x=new Date();
+            document.getElementsByClassName("hours")[0].innerHTML=x.getHours();
+            document.getElementsByClassName("minitues")[0].innerHTML=x.getMinutes();
+            document.getElementsByClassName("second")[0].innerHTML=x.getSeconds();
+        }
+        setInterval(clock,1000)
+       </script>
+    </body>
+</html>
